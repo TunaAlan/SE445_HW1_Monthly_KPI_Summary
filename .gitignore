@@ -4,3 +4,4 @@ __pycache__/
 # Runtime-generated signal files (do NOT ignore workflow_config.json)
 trigger_signal.json
 *_signal.json
+fetch_parameters.json
