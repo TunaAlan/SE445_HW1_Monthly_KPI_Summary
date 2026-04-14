@@ -1,1 +1,5 @@
 schedule==1.2.2
+
+# Step 3 — Google Sheets connector (real mode only; not needed for --mock)
+gspread==6.1.2
+google-auth==2.29.0

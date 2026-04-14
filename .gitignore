@@ -1,7 +1,11 @@
 venv/
 __pycache__/
 
-# Runtime-generated signal files (do NOT ignore workflow_config.json)
+# Runtime-generated signal/data files (do NOT ignore workflow_config.json)
 trigger_signal.json
 *_signal.json
 fetch_parameters.json
+kpi_data.json
+
+# Google API credentials (never commit these!)
+credentials/
