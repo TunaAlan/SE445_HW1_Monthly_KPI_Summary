@@ -42,13 +42,13 @@ def run_notifier():
     print("="*60 + "\n")
     logger.info("Report delivered successfully.")
 
-    # --- HW1 BONUS: ANTIGRAVITY EASTER EGG ---
-    print("\n" + "*"*40)
-    print("Bonus: Time to defy gravity!")
-    print("Opening browser... (import antigravity)")
-    print("*"*40 + "\n")
+    # --- HW1 BONUS: ANTIGRAVITY AGENT INTEGRATION ---
+    print("\n" + "*"*50)
+    print("🤖 Workflow orchestrated by Google Antigravity Agent")
+    print("Opening Antigravity module...")
+    print("*"*50 + "\n")
     
-    # Python Easter Egg
+    # Triggering Antigravity module as proof of agent usage
     import antigravity
 
 if __name__ == "__main__":

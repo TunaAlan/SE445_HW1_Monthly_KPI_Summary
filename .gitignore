@@ -6,6 +6,12 @@ trigger_signal.json
 *_signal.json
 fetch_parameters.json
 kpi_data.json
+ai_summary.json
+final_report.json
 
-# Google API credentials (never commit these!)
+# Google API credentials & secrets (NEVER commit these!)
+.env
 credentials/
+
+# IDE & OS.DS_Store
+.vscode/
