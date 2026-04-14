@@ -7,3 +7,6 @@ google-auth==2.29.0
 # Step 4 — Gemini AI completion
 google-genai>=0.8.0
 python-dotenv==1.0.1
+
+# Step 5 - Slack Notifier
+requests==2.31.0

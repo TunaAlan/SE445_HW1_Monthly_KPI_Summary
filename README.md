@@ -31,6 +31,7 @@ Trigger → Processing Function → External API (Sheets) → AI Completion
 | 2 | `02_processing_function.py` | Signal processor & data mapper |
 | 3 | `03_sheets_connector.py` | Google Sheets API connector |
 | 4 | `04_ai_completion.py` | Gemini AI summarization |
+| 5 | `05_notifier.py` | Sends the final summary as a notification |
 
 ---
 
@@ -194,7 +195,29 @@ python 04_ai_completion.py          # real Gemini API
 
 ---
 
-## 🚀 Setup & Installation
+### Step 5 — Final Notifier (`05_notifier.py`)
+
+Reads the AI summary and sends it as a final report to a Slack channel using an Incoming Webhook, fulfilling the "email/Slack notification integration" requirement.
+
+- **Input:** `ai_summary.json`
+- **Output:** Slack Channel Message
+- **Integration:** Slack Webhook
+
+**Slack Webhook Setup:**
+1. Go to [api.slack.com/apps](https://api.slack.com/apps) and click **Create New App** (From scratch).
+2. Enable **Incoming Webhooks**.
+3. Click **Add New Webhook to Workspace** and authorize a channel.
+4. Copy the Webhook URL and paste it into `.env` as `SLACK_WEBHOOK_URL`.
+
+**Test:**
+```bash
+python 05_notifier.py --mock   # simulated terminal output (no credentials needed)
+python 05_notifier.py          # real Slack delivery (requires .env configuration)
+```
+
+---
+
+## Setup & Installation
 
 ### Prerequisites
 
@@ -226,8 +249,9 @@ pip install -r requirements.txt
 
 ```bash
 cp .env.example .env
-# Edit .env and add your Gemini API key:
-# GEMINI_API_KEY=your_key_here
+# Edit .env and add your API keys:
+# GEMINI_API_KEY=your_gemini_key_here
+# SLACK_WEBHOOK_URL=your_slack_webhook_url_here
 ```
 
 Get your API key from: [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
@@ -236,8 +260,13 @@ Get your API key from: [aistudio.google.com/app/apikey](https://aistudio.google.
 
 ## Running the Full Pipeline
 
-Run the steps in sequence:
+### Option A: Run the unified orchestrator (Recommended)
+This will execute all steps sequentially from start to finish:
+```bash
+./run_pipeline.sh
+```
 
+### Option B: Run steps sequentially manually
 ```bash
 # Step 1 — Fire the trigger
 python 01_schedule_trigger.py --now
@@ -250,6 +279,9 @@ python 03_sheets_connector.py --mock
 
 # Step 4 — Generate AI summary
 python 04_ai_completion.py
+
+# Step 5 — Deliver to Slack (mock mode)
+python 05_notifier.py --mock
 ```
 
 After all steps, check the final output:
@@ -267,6 +299,7 @@ cat ai_summary.json
 | `gspread` | 6.1.2 | Google Sheets API |
 | `google-auth` | 2.29.0 | Google authentication |
 | `google-genai` | ≥0.8.0 | Gemini AI SDK |
+| `requests` | >=2.31.0 | Slack Webhook API calls |
 | `python-dotenv` | 1.0.1 | Environment variable loading |
 
 ---
@@ -319,5 +352,10 @@ cat ai_summary.json
 └────────┬────────────┘
          │ ai_summary.json
          ▼
-    Management Summary
+┌─────────────────────┐
+│ 05_notifier         │  ← Delivers final report payload
+│  (Slack Webhook)    │     to Slack channel
+└────────┬────────────┘
+         ▼
+    Slack Message
 ```
