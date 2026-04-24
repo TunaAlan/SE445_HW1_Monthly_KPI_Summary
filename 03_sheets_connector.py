@@ -36,7 +36,7 @@ KPI_DATA_FILE     = BASE_DIR / "kpi_data.json"             # output (for Step 4)
 CREDENTIALS_FILE  = BASE_DIR / "credentials" / "service_account.json"
 
 # ← Replace with your actual Google Sheet ID (from its URL)
-SPREADSHEET_ID = "YOUR_SPREADSHEET_ID_HERE"
+SPREADSHEET_ID = "1yUA_qXREhg41Z3OEiwMMGrAPHnnd4-B2RCSLWRAfdEM"
 
 # Columns to read from the sheet (A1 notation range)
 DATA_RANGE = "A1:B10"

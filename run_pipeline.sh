@@ -14,7 +14,7 @@ echo -e "\n[2/5] Processing trigger signal..."
 python 02_processing_function.py
 
 echo -e "\n[3/5] Fetching KPI data (Mock Mode)..."
-python 03_sheets_connector.py --mock
+python 03_sheets_connector.py
 
 echo -e "\n[4/5] Generating AI Summary..."
 python 04_ai_completion.py
