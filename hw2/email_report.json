@@ -1,0 +1,8 @@
+{
+  "sheet_name": "April 2026",
+  "formatted_at": "2026-04-24T20:54:11",
+  "subject": "Monthly KPI Report: April 2026",
+  "plain_body": "Monthly KPI Report: April 2026\n========================================\nMetric                    Value\n----------------------------------------\nRevenue                  125000\nNew Customers               342\nChurn Rate                  2.3\nActive Users               8750\n========================================",
+  "html_body": "<html><body>\n<h2>Monthly KPI Report: April 2026</h2>\n<table border=\"1\" cellpadding=\"8\" cellspacing=\"0\" style=\"border-collapse:collapse;\">\n  <thead>\n    <tr style=\"background:#f2f2f2;\">\n      <th>Metric</th>\n      <th>Value</th>\n    </tr>\n  </thead>\n  <tbody>\n<tr><td>Revenue</td><td><strong>125000</strong></td></tr>\n<tr><td>New Customers</td><td><strong>342</strong></td></tr>\n<tr><td>Churn Rate</td><td><strong>2.3</strong></td></tr>\n<tr><td>Active Users</td><td><strong>8750</strong></td></tr>\n  </tbody>\n</table>\n</body></html>",
+  "report_status": "ready_to_send"
+}
