@@ -1,7 +1,7 @@
 venv/
 __pycache__/
 
-# Runtime-generated signal/data files (do NOT ignore workflow_config.json)
+# Runtime-generated signal/data files
 trigger_signal.json
 *_signal.json
 fetch_parameters.json
@@ -11,7 +11,12 @@ final_report.json
 
 # Google API credentials & secrets (NEVER commit these!)
 .env
+hw1/.env
+hw2/.env
 credentials/
+hw1/credentials/
+hw2/credentials/
 
-# IDE & OS.DS_Store
+# IDE & OS
+.DS_Store
 .vscode/
